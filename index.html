@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hikaru Nishiyama — personal academic homepage.">
+  <title>Hikaru Nishiyama</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">HN</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+    <nav id="site-nav" class="site-nav">
+      <a href="#profile">Profile</a>
+      <a href="#biography">Biography</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#funding">Funding</a>
+      <a href="#links">Links</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <p class="eyebrow">Personal Homepage</p>
+        <h1>Hikaru Nishiyama</h1>
+        <p class="subtitle">Researcher, Cyber-Physical Security Research Center (CPSEC), AIST</p>
+        <p class="subtitle">Visiting Assistant Professor, Information Security Engineering Laboratory, NAIST</p>
+        <p class="hero-copy">My research interests include hardware security, physical attacks, cryptographic hardware, true random number generators, and electromagnetic compatibility.</p>
+      </div>
+      <aside class="hero-side">
+        <div class="simple-card">
+          <h2>Current positions</h2>
+          <ul class="plain-list">
+            <li><strong>Researcher</strong><br>Cyber-Physical Security Research Center, National Institute of Advanced Industrial Science and Technology (AIST)</li>
+            <li><strong>Visiting Assistant Professor</strong><br>Information Security Engineering Laboratory, Nara Institute of Science and Technology (NAIST)</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="profile" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Profile</p>
+        <h2>Research interests</h2>
+      </div>
+      <div class="interest-grid">
+        <article class="interest-card">
+          <h3>Hardware Security</h3>
+          <p>Security evaluation and protection of cryptographic hardware and cyber-physical systems.</p>
+        </article>
+        <article class="interest-card">
+          <h3>Physical Attacks</h3>
+          <p>Fault injection attacks, side-channel attacks, and non-invasive manipulation of embedded devices.</p>
+        </article>
+        <article class="interest-card">
+          <h3>Cryptographic Primitives</h3>
+          <p>Cryptographic algorithms, true random number generators, and hardware-oriented security evaluation.</p>
+        </article>
+        <article class="interest-card">
+          <h3>Electromagnetic Compatibility</h3>
+          <p>Intentional electromagnetic interference and electromagnetic effects on integrated circuits and systems.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="biography" class="section alt-section">
+    <div class="container narrow">
+      <div class="section-heading">
+        <p class="eyebrow">Biography</p>
+        <h2>Academic and professional history</h2>
+      </div>
+      <ol class="timeline">
+        <li><span>2024.05 – Present</span><div><strong>Visiting Assistant Professor</strong><br>Information Security Engineering Laboratory, Nara Institute of Science and Technology (NAIST)</div></li>
+        <li><span>2024.04 – Present</span><div><strong>Researcher</strong><br>Cyber-Physical Security Research Center (CPSEC), National Institute of Advanced Industrial Science and Technology (AIST)</div></li>
+        <li><span>2021.04 – 2024.03</span><div><strong>Doctoral Course Student</strong><br>Division of Information Science, Nara Institute of Science and Technology (NAIST)</div></li>
+        <li><span>2019.04 – 2021.03</span><div><strong>Master Course Student</strong><br>Division of Information Science, Nara Institute of Science and Technology (NAIST)</div></li>
+        <li><span>2012.04 – 2019.03</span><div><strong>Bachelor Course Student</strong><br>National Institute of Technology, Sasebo College (NITS)</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="publications" class="section">
+    <div class="container">
+      <div class="section-heading publication-heading">
+        <div>
+          <p class="eyebrow">Publications</p>
+          <h2>Research output</h2>
+          <p class="muted">Entries are generated from <code>publications.bib</code>. You can update the page by editing that file only.</p>
+        </div>
+        <a class="button secondary compact" href="publications.bib" download><i class="fa-solid fa-download"></i> Download BibTeX</a>
+      </div>
+      <div class="publication-controls">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="journal">Journal</button>
+        <button class="filter" data-filter="international">International</button>
+        <button class="filter" data-filter="domestic">Domestic</button>
+        <button class="filter" data-filter="talk">Talks</button>
+        <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="publication-search" type="search" placeholder="Search title, author, venue…"></label>
+      </div>
+      <div id="publication-status" class="publication-status">Loading publications…</div>
+      <div id="publication-list"></div>
+    </div>
+  </section>
+
+  <section id="awards" class="section alt-section">
+    <div class="container two-column">
+      <div>
+        <div class="section-heading">
+          <p class="eyebrow">Awards</p>
+          <h2>Recognition</h2>
+        </div>
+        <ul class="clean-list award-list">
+          <li><span>2024</span>International Union of Radio Science URSI AT-RASC 2024 Young Scientist Award</li>
+          <li><span>2023</span>電子情報通信学会 環境電磁工学研究会若手研究者発表会 JIEP電磁特性技術委員会賞</li>
+          <li><span>2023</span>電子情報通信学会 ハードウェアセキュリティ研究会 若手優秀賞</li>
+          <li><span>2022</span>ハードウェアセキュリティサマーセミナー 最優秀ポスター賞</li>
+        </ul>
+      </div>
+      <div id="funding">
+        <div class="section-heading">
+          <p class="eyebrow">Funding</p>
+          <h2>Scholarships and grants</h2>
+        </div>
+        <ul class="clean-list grant-list detailed-grants">
+          <li>
+            <span>2026.04 – 2029.03</span>
+            <strong>JSPS KAKENHI, Grant-in-Aid for Young Scientists</strong>
+            <em>情報機器遠隔からの意図的電磁妨害に基づく故障利用攻撃への対策技術の開発</em>
+          </li>
+          <li>
+            <span>2024.07 – 2026.03</span>
+            <strong>JSPS KAKENHI, Grant-in-Aid for Research Activity Start-up</strong>
+            <em>意図的電磁妨害が引き起こすデータ改ざんに対抗する汎用的な機器設計手法の確立</em>
+          </li>
+          <li>
+            <span>2021.04 – 2024.03</span>
+            <strong>MEXT, University Fellowship Program</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="links" class="section">
+    <div class="container narrow center">
+      <p class="eyebrow">Links</p>
+      <h2>Profiles and affiliations</h2>
+      <p class="muted">Update the profile URLs in <code>assets/site.js</code> if needed.</p>
+      <div id="profile-links" class="icon-links"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <p>© <span id="current-year"></span> Hikaru Nishiyama</p>
+    <a href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>
+</body>
+</html>
