@@ -1,9 +1,8 @@
 
 const PROFILE_LINKS = [
-  { label: "Google Scholar", icon: "fa-brands fa-google-scholar", url: "https://scholar.google.com/" },
-  { label: "IEEE Author Details", icon: "fa-solid fa-microchip", url: "https://ieeexplore.ieee.org/" },
-  { label: "Researchmap", icon: "fa-solid fa-id-card", url: "https://researchmap.jp/" },
-  { label: "AIST CPSEC", icon: "fa-solid fa-building-shield", url: "https://www.aist.go.jp/" }
+  { label: "Google Scholar", icon: "fa-brands fa-google-scholar", url: "https://scholar.google.com/citations?user=NVYVIGoAAAAJ&hl=ja" },
+  { label: "Researchmap", icon: "fa-solid fa-id-card", url: "https://researchmap.jp/hikaru.nishiyama" },
+  { label: "AIST CPSEC", icon: "fa-solid fa-building-shield", url: "https://www.cpsec.aist.go.jp/group/hsrg/researcher/nishiyama/index_en.html" }
 ];
 
 const LABELS = {

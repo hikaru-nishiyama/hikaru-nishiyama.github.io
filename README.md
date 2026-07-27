@@ -17,7 +17,7 @@ Supported categories:
 - `talk`
 
 ## Update links
-Edit `PROFILE_LINKS` in `assets/site.js`.
+Edit `PROFILE_LINKS` in `assets/site.js`. Current links are Google Scholar, Researchmap, and AIST CPSEC.
 
 ## Local preview
 ```bash
