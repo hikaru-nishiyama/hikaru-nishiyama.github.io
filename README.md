@@ -24,7 +24,3 @@ Edit `PROFILE_LINKS` in `assets/site.js`. Current links are Google Scholar, Rese
 python3 -m http.server 8000
 ```
 Then open `http://localhost:8000`.
-
-
-## Replace profile photographs
-Replace `assets/profile-1.png` and `assets/profile-2.png` with your own PNG photographs, keeping the same filenames. Portrait images with an aspect ratio close to 4:5 are recommended.
