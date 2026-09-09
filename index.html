@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- SITE_VERSION: v5-keywords-github -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -7,22 +8,21 @@
   <title>Hikaru Nishiyama</title>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/style.css">
-  <script defer src="assets/site.js"></script>
+  <link rel="stylesheet" href="assets/style.css?v=v5-keywords-github">
+  <script defer src="assets/site.js?v=v5-keywords-github"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container nav-wrap">
-    <a class="brand" href="#top">HN</a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
     <nav id="site-nav" class="site-nav">
-      <a href="#profile">Profile</a>
       <a href="#biography">Biography</a>
+      <a href="#profile">Research Theme / Keywords</a>
       <a href="#publications">Publications</a>
       <a href="#awards">Awards</a>
-      <a href="#funding">Funding</a>
-      <a href="#links">Links</a>
+      <a href="#funding">Fundings</a>
+      <a href="#memberships">Membership</a>
     </nav>
   </div>
 </header>
@@ -31,81 +31,116 @@
   <section id="top" class="hero">
     <div class="container hero-grid">
       <div class="hero-main">
-        <p class="eyebrow">Personal Homepage</p>
         <h1>Hikaru Nishiyama</h1>
-        <p class="subtitle">Researcher, Cyber-Physical Security Research Institute (CPSEC), AIST</p>
-        <p class="hero-copy">My research interests include hardware security, physical attacks, cryptographic hardware, true random number generators, and electromagnetic compatibility.</p>
-      </div>
-      <aside class="hero-side" aria-label="Profile photographs">
-        <div class="profile-photo-grid">
-          <figure class="profile-photo-card"><img src="assets/profile-1.png" alt="Portrait photograph of Hikaru Nishiyama"></figure>
-          <figure class="profile-photo-card"><img src="assets/profile-2.png" alt="Portrait photograph of Hikaru Nishiyama"></figure>
+        <div class="affiliation-block">
+          <p class="role-line">Researcher</p>
+          <p><a class="affiliation-link" href="https://www.cpsec.aist.go.jp/" target="_blank" rel="noopener">Cyber-Physical Security Research Institute (CPSEC)</a></p>
+          <p><a class="affiliation-link" href="https://www.aist.go.jp/" target="_blank" rel="noopener">National Institute of Advanced Industrial Science and Technology (AIST)</a></p>
         </div>
+        <p class="contact-line"><strong>Contact:</strong> hikaru[dot]nishiyama [at] aist[dot]go[dot]jp</p>
+        <div id="profile-links" class="icon-links hero-links" aria-label="External profiles"></div>
+      </div>
+      <aside class="hero-side" aria-label="Profile photograph">
+        <figure class="profile-photo-card single-profile-photo"><img src="assets/profile.png" alt="AIST identity card portrait of Hikaru Nishiyama"></figure>
       </aside>
-    </div>
-  </section>
-
-  <section id="profile" class="section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Profile</p>
-        <h2>Research interests</h2>
-      </div>
-      <div class="interest-grid">
-        <article class="interest-card">
-          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-          <h3>Hardware Security</h3>
-          <p>Security evaluation and protection of cryptographic hardware and cyber-physical systems.</p>
-        </article>
-        <article class="interest-card">
-          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-          <h3>Physical Attacks</h3>
-          <p>Fault injection attacks, side-channel attacks, and non-invasive manipulation of embedded devices.</p>
-        </article>
-        <article class="interest-card">
-          <i class="fa-solid fa-key" aria-hidden="true"></i>
-          <h3>Cryptographic Primitives</h3>
-          <p>Cryptographic algorithms, true random number generators, and hardware-oriented security evaluation.</p>
-        </article>
-        <article class="interest-card">
-          <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>
-          <h3>Electromagnetic Compatibility</h3>
-          <p>Intentional electromagnetic interference and electromagnetic effects on integrated circuits and systems.</p>
-        </article>
-      </div>
     </div>
   </section>
 
   <section id="biography" class="section alt-section">
     <div class="container narrow">
-      <div class="section-heading">
-        <p class="eyebrow">Biography</p>
-        <h2>Academic and professional history</h2>
+      <div class="section-heading simple-blue-heading">
+        <h2>Biography</h2>
       </div>
       <ol class="timeline">
         <li><span>2025.04 – Present</span><div><strong>Researcher</strong><br>Cyber-Physical Security Research Institute (CPSEC), National Institute of Advanced Industrial Science and Technology (AIST)</div></li>
         <li><span>2024.04 – 2025.03</span><div><strong>Researcher</strong><br>Cyber-Physical Security Research Center (CPSEC), National Institute of Advanced Industrial Science and Technology (AIST)</div></li>
-        <li><span>2021.04 – 2024.03</span><div><strong>Doctoral Course Student</strong><br>Division of Information Science, Nara Institute of Science and Technology (NAIST)<br><span class="timeline-note">MEXT University Fellowship Program</span></div></li>
+        <li><span>2021.04 – 2024.03</span><div><strong>Doctoral Course Student</strong><br>Division of Information Science, Nara Institute of Science and Technology (NAIST)</div></li>
         <li><span>2019.04 – 2021.03</span><div><strong>Master Course Student</strong><br>Division of Information Science, Nara Institute of Science and Technology (NAIST)</div></li>
         <li><span>2012.04 – 2019.03</span><div><strong>Bachelor Course Student</strong><br>National Institute of Technology, Sasebo College (NITS)</div></li>
       </ol>
     </div>
   </section>
 
+  <section id="profile" class="section">
+    <div class="container">
+      <div class="section-heading simple-blue-heading">
+        <h2>Research Theme / Keywords</h2>
+      </div>
+      <div class="research-keywords">
+        <h3>Hardware Security</h3>
+        <div class="keyword-list">
+          <div class="keyword-row">
+            <div class="keyword-name">Fault Attacks</div>
+            <div class="keyword-pubs">
+              <a href="#pub-nishiyama2023efficient">IEEE TEMC 2023</a>
+              <a href="#pub-nishiyama2025remote">Journal of Cryptographic Engineering 2025</a>
+              <a href="#pub-nishiyama2026isita">ISITA 2026</a>
+            </div>
+          </div>
+          <div class="keyword-row">
+            <div class="keyword-name">Side-Channel Attacks</div>
+            <div class="keyword-pubs">
+              <a href="#pub-hayashi2025taxonomy">APMC 2025</a>
+              <a href="#pub-onuki2024fault">HWS 2024</a>
+            </div>
+          </div>
+          <div class="keyword-row">
+            <div class="keyword-name">Hardware Trojan Detection</div>
+            <div class="keyword-pubs">
+              <a href="#pub-nishiyama2026paine">PAINE 2026</a>
+              <a href="#pub-nishiyama2026society">IEICE Society Conference 2026</a>
+            </div>
+          </div>
+          <div class="keyword-row">
+            <div class="keyword-name">True Random Number Generators (TRNGs)</div>
+            <div class="keyword-pubs">
+              <a href="#pub-nishiyama2027unified">TCHES 2027</a>
+              <a href="#pub-nishiyama2026fdtc">FDTC 2026</a>
+              <a href="#pub-nishiyama2025trng">SCIS 2025</a>
+            </div>
+          </div>
+          <div class="keyword-row">
+            <div class="keyword-name">Intentional Electromagnetic Interference (IEMI)</div>
+            <div class="keyword-pubs">
+              <a href="#pub-nishiyama2024pll">IEEE TEMC 2024</a>
+              <a href="#pub-nishiyama2026pdn">IEEE L-EMCPA 2026</a>
+              <a href="#pub-nishiyama2026emccompo">EMC Compo 2026</a>
+            </div>
+          </div>
+          <div class="keyword-row">
+            <div class="keyword-name">Secure Embedded Systems</div>
+            <div class="keyword-pubs">
+              <a href="#pub-nishiyama2026pdn">IEEE L-EMCPA 2026</a>
+              <a href="#pub-nishiyama2019communication">EMC Compo 2019</a>
+              <a href="#pub-nishiyama2023remoteconf">ASHES 2023</a>
+            </div>
+          </div>
+          <div class="keyword-row">
+            <div class="keyword-name">Electrical &amp; Circuit-Level Countermeasures</div>
+            <div class="keyword-pubs">
+              <a href="#pub-nishiyama2025mitigating">IEEE EMC+SIPI 2025</a>
+              <a href="#pub-nishiyama2024spread">URSI AT-RASC 2024</a>
+              <a href="#pub-nishiyama2025multiplepll">HWS 2025</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="publications" class="section">
     <div class="container">
-      <div class="section-heading publication-heading">
+      <div class="section-heading publication-heading simple-blue-heading">
         <div>
           <h2>Publications</h2>
-          <p class="muted">Entries are generated from <code>publications.bib</code>. You can update the page by editing that file only.</p>
         </div>
         <a class="button secondary compact" href="publications.bib" download><i class="fa-solid fa-download"></i> Download BibTeX</a>
       </div>
       <div class="publication-controls">
         <button class="filter active" data-filter="all">All</button>
         <button class="filter" data-filter="journal">Journal</button>
-        <button class="filter" data-filter="international">International</button>
-        <button class="filter" data-filter="domestic">Domestic</button>
+        <button class="filter" data-filter="international">International Conference</button>
+        <button class="filter" data-filter="domestic">Domestic Activity</button>
         <button class="filter" data-filter="talk">Talks</button>
         <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="publication-search" type="search" placeholder="Search title, author, venue…"></label>
       </div>
@@ -115,58 +150,49 @@
   </section>
 
   <section id="awards" class="section alt-section">
-    <div class="container two-column">
-      <div>
-        <div class="section-heading">
-          <p class="eyebrow">Awards</p>
-          <h2>Recognition</h2>
-        </div>
-        <ul class="clean-list award-list">
-          <li><span>2024</span>International Union of Radio Science URSI AT-RASC 2024 Young Scientist Award</li>
-          <li><span>2023</span>電子情報通信学会 環境電磁工学研究会若手研究者発表会 JIEP電磁特性技術委員会賞</li>
-          <li><span>2023</span>電子情報通信学会 ハードウェアセキュリティ研究会 若手優秀賞</li>
-          <li><span>2022</span>ハードウェアセキュリティサマーセミナー 最優秀ポスター賞</li>
-        </ul>
+    <div class="container">
+      <div class="section-heading simple-blue-heading">
+        <h2>Awards</h2>
       </div>
-      <div id="funding">
-        <div class="section-heading">
-          <p class="eyebrow">Funding</p>
-          <h2>Scholarships and grants</h2>
-        </div>
-        <ul class="clean-list grant-list detailed-grants">
-          <li>
-            <span>2026.04 – 2029.03</span>
-            <strong>JSPS KAKENHI, Grant-in-Aid for Young Scientists</strong>
-            <em>情報機器遠隔からの意図的電磁妨害に基づく故障利用攻撃への対策技術の開発</em>
-          </li>
-          <li>
-            <span>2024.07 – 2026.03</span>
-            <strong>JSPS KAKENHI, Grant-in-Aid for Research Activity Start-up</strong>
-            <em>意図的電磁妨害が引き起こすデータ改ざんに対抗する汎用的な機器設計手法の確立</em>
-          </li>
-          <li>
-            <span>2021.04 – 2024.03</span>
-            <strong>MEXT, University Fellowship Program</strong>
-            <em>文部科学省 大学フェローシップ創設事業</em>
-          </li>
-        </ul>
-      </div>
+      <ol class="timeline">
+        <li><span>2024</span><div><strong>International Union of Radio Science URSI AT-RASC 2024 Young Scientist Award</strong></div></li>
+        <li><span>2023</span><div><strong>電子情報通信学会 環境電磁工学研究会若手研究者発表会 JIEP電磁特性技術委員会賞</strong></div></li>
+        <li><span>2023</span><div><strong>電子情報通信学会 ハードウェアセキュリティ研究会 若手優秀賞</strong></div></li>
+        <li><span>2022</span><div><strong>ハードウェアセキュリティサマーセミナー 最優秀ポスター賞</strong></div></li>
+      </ol>
     </div>
   </section>
 
-  <section id="links" class="section">
-    <div class="container narrow center">
-      <p class="eyebrow">Links</p>
-      <h2>Profiles and affiliations</h2>
-      <p class="muted">Update the profile URLs in <code>assets/site.js</code> if needed.</p>
-      <div id="profile-links" class="icon-links"></div>
+  <section id="funding" class="section">
+    <div class="container">
+      <div class="section-heading simple-blue-heading">
+        <h2>Fundings</h2>
+      </div>
+      <ol class="timeline">
+        <li><span>2026.04 – 2029.03</span><div><strong>JSPS KAKENHI, Grant-in-Aid for Young Scientists</strong><br><a class="funding-link" href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-26K21223/" target="_blank" rel="noopener">情報機器遠隔からの意図的電磁妨害に基づく故障利用攻撃への対策技術の開発 <i class="fa-solid fa-arrow-up-right-from-square"></i></a><br><span class="project-number">26K21223</span></div></li>
+        <li><span>2024.07 – 2026.03</span><div><strong>JSPS KAKENHI, Grant-in-Aid for Research Activity Start-up</strong><br><a class="funding-link" href="https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-24K23875/" target="_blank" rel="noopener">意図的電磁妨害が引き起こすデータ改ざんに対抗する汎用的な機器設計手法の確立 <i class="fa-solid fa-arrow-up-right-from-square"></i></a><br><span class="project-number">24K23875</span></div></li>
+        <li><span>2021.04 – 2024.03</span><div><strong>MEXT, University Fellowship Program</strong><br>文部科学省 大学フェローシップ創設事業</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="memberships" class="section alt-section">
+    <div class="container">
+      <div class="section-heading simple-blue-heading">
+        <h2>Membership</h2>
+      </div>
+      <ul class="membership-list">
+        <li><a href="https://www.ieee.org/" target="_blank" rel="noopener">Institute of Electrical and Electronics Engineers (IEEE)</a></li>
+        <li><a href="https://www.ieice.org/eng_r/" target="_blank" rel="noopener">Institute of Electronics, Information and Communication Engineers (IEICE)</a></li>
+        <li><a href="https://www.iacr.org/" target="_blank" rel="noopener">International Association for Cryptologic Research (IACR)</a></li>
+      </ul>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-wrap">
-    <p>© <span id="current-year"></span> Hikaru Nishiyama</p>
+    <div class="footer-meta"><p>© <span id="current-year"></span> Hikaru Nishiyama</p><p class="last-updated">Last updated: September 9, 2026</p></div>
     <a href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
   </div>
 </footer>

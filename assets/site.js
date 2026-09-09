@@ -1,14 +1,15 @@
 
 const PROFILE_LINKS = [
   { label: "Google Scholar", icon: "fa-brands fa-google-scholar", url: "https://scholar.google.com/citations?user=NVYVIGoAAAAJ&hl=ja" },
+  { label: "IEEE Author Profile", icon: "fa-solid fa-microchip", url: "https://ieeexplore.ieee.org/author/37087115618" },
   { label: "Researchmap", icon: "fa-solid fa-id-card", url: "https://researchmap.jp/hikaru.nishiyama" },
-  { label: "AIST CPSEC", icon: "fa-solid fa-building-shield", url: "https://www.cpsec.aist.go.jp/group/hsrg/researcher/nishiyama/index_en.html" }
+  { label: "KAKEN Researcher Profile", icon: "fa-solid fa-flask", url: "https://nrid.nii.ac.jp/ja/nrid/1000021003287/" },
 ];
 
 const LABELS = {
   journal: "Journal",
-  international: "International",
-  domestic: "Domestic",
+  international: "International Conference",
+  domestic: "Domestic Activity",
   talk: "Talk"
 };
 
@@ -31,11 +32,22 @@ function parseBib(src){
   return out;
 }
 
+
+function idSlug(s){
+  return String(s || "").toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
 function venue(p){ return p.journal || p.booktitle || p.howpublished || p.note || ""; }
 function authors(a){
-  return esc(a)
+  return esc(a).replace(/ and /g, ", ")
     .replace(/Hikaru Nishiyama/g, '<span class="me">Hikaru Nishiyama</span>')
     .replace(/西山 輝/g, '<span class="me">西山 輝</span>');
+}
+
+function formatVenue(p){
+  return esc(venue(p))
+    .replace(/Invited Talk/g, '<span class="invited-talk">Invited Talk</span>')
+    .replace(/招待講演/g, '<span class="invited-talk">招待講演</span>');
 }
 
 function render(){
@@ -45,7 +57,7 @@ function render(){
     [p.title, p.author, venue(p), p.year].join(" ").toLowerCase().includes(q)
   );
 
-  document.querySelector("#publication-status").textContent = `${filtered.length} entries`;
+  document.querySelector("#publication-status").textContent = `${filtered.length} ${filtered.length === 1 ? "Item" : "Items"}`;
   const years = [...new Set(filtered.map(p => p.year || "Undated"))].sort((a,b) => String(b).localeCompare(String(a)));
 
   document.querySelector("#publication-list").innerHTML = years.map(y => `
@@ -53,19 +65,16 @@ function render(){
       <h3>${esc(y)}</h3>
       <div class="publication-items">
         ${filtered.filter(p => (p.year || "Undated") === y).map(p => `
-          <article class="publication-item">
+          <article class="publication-item" id="pub-${idSlug(p.key)}">
             <p class="title">${esc(p.title)}</p>
             <p class="authors">${authors(p.author)}</p>
-            <p class="venue">${esc(venue(p))}${p.volume ? `, vol. ${esc(p.volume)}` : ""}${p.number ? `, no. ${esc(p.number)}` : ""}${p.pages ? `, pp. ${esc(p.pages)}` : ""}</p>
-            <div class="pub-meta">
-              <span class="badge">${esc(LABELS[p.category] || p.category || "Other")}</span>
-              ${p.url ? `<a class="pub-link" href="${esc(p.url)}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</a>` : ""}
-            </div>
+            <p class="venue">${formatVenue(p)}${p.volume ? `, vol. ${esc(p.volume)}` : ""}${p.number ? `, no. ${esc(p.number)}` : ""}${p.pages ? `, pp. ${esc(p.pages)}` : ""}</p>
+            ${(p.url || p.doi || p.status || p.openaccess) ? `<div class="pub-meta">${(p.url || p.doi) ? `<a class="pub-link" href="${esc(p.url || `https://doi.org/${p.doi}`)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</a>` : (p.status ? `<span class="pub-status">${esc(p.status)}</span>` : "")}${p.openaccess === "yes" ? `<span class="oa-label">Open Access</span>` : ""}</div>` : ""}
           </article>
         `).join("")}
       </div>
     </section>
-  `).join("") || '<p class="muted">No matching entries.</p>';
+  `).join("") || '<p class="muted">No matching items.</p>';
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
