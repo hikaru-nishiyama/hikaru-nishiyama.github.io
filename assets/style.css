@@ -102,3 +102,11 @@ body{font-family:"Helvetica Neue",Arial,"Hiragino Sans",sans-serif}.site-header{
   .keyword-row{grid-template-columns:1fr;gap:7px;padding:15px 0}
   .keyword-pubs{gap:5px 14px}
 }
+
+
+/* v6 research theme and profile marks */
+.profile-mark{display:inline-flex;align-items:center;justify-content:center;line-height:1;white-space:nowrap;color:currentColor}
+.mark-ieee{font-size:.69rem;font-weight:800;letter-spacing:-.035em}
+.mark-researchmap{font-size:1.02rem;font-weight:750;letter-spacing:-.07em;text-transform:lowercase}
+.mark-kaken{font-size:.56rem;font-weight:800;letter-spacing:.025em}
+.keyword-pubs a{font-weight:500}

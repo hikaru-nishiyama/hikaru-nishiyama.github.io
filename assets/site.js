@@ -1,9 +1,9 @@
 
 const PROFILE_LINKS = [
   { label: "Google Scholar", icon: "fa-brands fa-google-scholar", url: "https://scholar.google.com/citations?user=NVYVIGoAAAAJ&hl=ja" },
-  { label: "IEEE Author Profile", icon: "fa-solid fa-microchip", url: "https://ieeexplore.ieee.org/author/37087115618" },
-  { label: "Researchmap", icon: "fa-solid fa-id-card", url: "https://researchmap.jp/hikaru.nishiyama" },
-  { label: "KAKEN Researcher Profile", icon: "fa-solid fa-flask", url: "https://nrid.nii.ac.jp/ja/nrid/1000021003287/" },
+  { label: "IEEE Author Profile", mark: "IEEE", markClass: "mark-ieee", url: "https://ieeexplore.ieee.org/author/37087115618" },
+  { label: "Researchmap", mark: "rm", markClass: "mark-researchmap", url: "https://researchmap.jp/hikaru.nishiyama" },
+  { label: "KAKEN Researcher Profile", mark: "KAKEN", markClass: "mark-kaken", url: "https://nrid.nii.ac.jp/ja/nrid/1000021003287/" },
 ];
 
 const LABELS = {
@@ -79,7 +79,7 @@ function render(){
 
 document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector("#current-year").textContent = new Date().getFullYear();
-  document.querySelector("#profile-links").innerHTML = PROFILE_LINKS.map(x => `<a class="icon-link" href="${x.url}" target="_blank" title="${x.label}" aria-label="${x.label}"><i class="${x.icon}"></i></a>`).join("");
+  document.querySelector("#profile-links").innerHTML = PROFILE_LINKS.map(x => `<a class="icon-link" href="${x.url}" target="_blank" rel="noopener" title="${x.label}" aria-label="${x.label}">${x.icon ? `<i class="${x.icon}"></i>` : `<span class="profile-mark ${x.markClass || ""}">${x.mark}</span>`}</a>`).join("");
 
   try {
     pubs = parseBib(await (await fetch("publications.bib")).text()).sort((a,b) => (+b.year || 0) - (+a.year || 0));
