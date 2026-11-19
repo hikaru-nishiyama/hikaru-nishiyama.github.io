@@ -1,22 +1,32 @@
 <!doctype html>
-<!-- SITE_VERSION: v6-research-theme -->
+<!-- SITE_VERSION: v18-ga4-news-naist -->
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L1MKBFFNBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L1MKBFFNBE');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Hikaru Nishiyama — personal academic homepage.">
   <title>Hikaru Nishiyama</title>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/style.css?v=v6-research-theme">
-  <script defer src="assets/site.js?v=v6-research-theme"></script>
+  <link rel="stylesheet" href="assets/style.css?v=v18-ga4-news-naist">
+  <script defer src="assets/site.js?v=v18-ga4-news-naist"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container nav-wrap">
+    <a class="site-brand" href="#top">Hikaru Nishiyama<span>（西山輝）</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
     <nav id="site-nav" class="site-nav">
+      <a href="#news">News</a>
       <a href="#biography">Biography</a>
       <a href="#profile">Research Theme</a>
       <a href="#publications">Publications</a>
@@ -31,9 +41,10 @@
   <section id="top" class="hero">
     <div class="container hero-grid">
       <div class="hero-main">
-        <h1>Hikaru Nishiyama</h1>
         <div class="affiliation-block">
           <p class="role-line">Researcher</p>
+          <p class="degree-line">Ph.D. (Engineering)</p>
+          <p><a class="affiliation-link" href="https://www.cpsec.aist.go.jp/group/hsrg/index_en.html" target="_blank" rel="noopener">Hardware Security Research Group</a></p>
           <p><a class="affiliation-link" href="https://www.cpsec.aist.go.jp/" target="_blank" rel="noopener">Cyber-Physical Security Research Institute (CPSEC)</a></p>
           <p><a class="affiliation-link" href="https://www.aist.go.jp/" target="_blank" rel="noopener">National Institute of Advanced Industrial Science and Technology (AIST)</a></p>
         </div>
@@ -46,13 +57,37 @@
     </div>
   </section>
 
+
+  <section id="news" class="section news-section">
+    <div class="container">
+      <div class="section-heading simple-blue-heading">
+        <h2>News</h2>
+      </div>
+      <div class="news-box">
+        <article class="news-item">
+          <p>On October 11, 2026, I will give an oral presentation entitled <em>Fault Attack on PLL-TRNG: Randomness Degradation through Clock Glitch-Induced PLL Perturbation</em> at FDTC 2026. <a href="https://fdtc.deib.polimi.it/FDTC26/slides.html" target="_blank" rel="noopener">Slides</a></p>
+        </article>
+        <article class="news-item">
+          <p>On October 27, 2026, I will give a poster presentation entitled <em>Chip-Level Hardware Trojan Detection via RF-Probed Impedance Measurement</em> at IEEE PAINE 2026. <a href="https://paine-conference.org/program/" target="_blank" rel="noopener">Program</a></p>
+        </article>
+        <article class="news-item">
+          <p>On December 7, 2026, I will give an invited talk entitled <em>ハードウェアに対する電磁フォールト攻撃および対策技術の最新動向</em> at HWS Forum 2026. <a href="https://www.ieice.org/ess/hws/_media/hwsf2026_cfp_v3.pdf" target="_blank" rel="noopener">HWS Forum PDF</a></p>
+        </article>
+        <article class="news-item">
+          <p>On December 8, 2026, I will give an oral presentation entitled <em>Non-Invasive Estimation Method of IEMI-Induced I/O Data Errors Using Reflection Characteristics</em> at EMC COMPO 2026. <a href="https://emccompo2026.jp/program" target="_blank" rel="noopener">Program</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="biography" class="section alt-section">
-    <div class="container narrow">
+    <div class="container">
       <div class="section-heading simple-blue-heading">
         <h2>Biography</h2>
       </div>
       <ol class="timeline">
         <li><span>2025.04 – Present</span><div><strong>Researcher</strong><br>Cyber-Physical Security Research Institute (CPSEC), National Institute of Advanced Industrial Science and Technology (AIST)</div></li>
+        <li><span>2024.05 – Present</span><div><strong>Visiting Assistant Professor</strong><br>Information Security Engineering Laboratory (ISELAB), Nara Institute of Science and Technology (NAIST)</div></li>
         <li><span>2024.04 – 2025.03</span><div><strong>Researcher</strong><br>Cyber-Physical Security Research Center (CPSEC), National Institute of Advanced Industrial Science and Technology (AIST)</div></li>
         <li><span>2021.04 – 2024.03</span><div><strong>Doctoral Course Student</strong><br>Division of Information Science, Nara Institute of Science and Technology (NAIST)</div></li>
         <li><span>2019.04 – 2021.03</span><div><strong>Master Course Student</strong><br>Division of Information Science, Nara Institute of Science and Technology (NAIST)</div></li>
@@ -66,64 +101,14 @@
       <div class="section-heading simple-blue-heading">
         <h2>Research Theme</h2>
       </div>
-      <div class="research-keywords">
-        <h3>Hardware Security</h3>
-        <div class="keyword-list">
-          <div class="keyword-row">
-            <div class="keyword-name">Fault Attacks</div>
-            <div class="keyword-pubs">
-              <a href="#pub-nishiyama2025remote">JCEN 2025</a>
-              <a href="#pub-nishiyama2024pll">IEEE TEMC 2024</a>
-              <a href="#pub-nishiyama2023efficient">IEEE TEMC 2023</a>
-              <a href="#pub-nishiyama2023remoteconf">ASHES 2023</a>
-              <a href="#pub-nishiyama2026isita">ISITA 2026</a>
-            </div>
-          </div>
-          <div class="keyword-row">
-            <div class="keyword-name">Side-Channel Attacks</div>
-            <div class="keyword-pubs">
-              <a href="#pub-nishiyama2024timing">EMC Europe 2024</a>
-              <a href="#pub-hayashi2025taxonomy">APMC 2025</a>
-            </div>
-          </div>
-          <div class="keyword-row">
-            <div class="keyword-name">Hardware Trojan Detection</div>
-            <div class="keyword-pubs">
-              <a href="#pub-nishiyama2026paine">PAINE 2026</a>
-            </div>
-          </div>
-          <div class="keyword-row">
-            <div class="keyword-name">True Random Number Generators (TRNGs)</div>
-            <div class="keyword-pubs">
-              <a href="#pub-nishiyama2027unified">TCHES 2027</a>
-              <a href="#pub-nishiyama2026fdtc">FDTC 2026</a>
-            </div>
-          </div>
-          <div class="keyword-row">
-            <div class="keyword-name">Intentional Electromagnetic Interference (IEMI)</div>
-            <div class="keyword-pubs">
-              <a href="#pub-nishiyama2026pdn">IEEE L-EMCPA 2026</a>
-              <a href="#pub-nishiyama2026emccompo">EMC Compo 2026</a>
-              <a href="#pub-nishiyama2024controlling">EMC Compo 2024</a>
-            </div>
-          </div>
-          <div class="keyword-row">
-            <div class="keyword-name">Attack Detection &amp; Countermeasures</div>
-            <div class="keyword-pubs">
-              <a href="#pub-nishiyama2026paine">PAINE 2026</a>
-              <a href="#pub-nishiyama2025mitigating">IEEE EMC+SIPI 2025</a>
-              <a href="#pub-nishiyama2024spread">URSI AT-RASC 2024</a>
-            </div>
-          </div>
-          <div class="keyword-row">
-            <div class="keyword-name">Electrical &amp; Circuit-Level Countermeasures</div>
-            <div class="keyword-pubs">
-              <a href="#pub-nishiyama2025mitigating">IEEE EMC+SIPI 2025</a>
-              <a href="#pub-nishiyama2024spread">URSI AT-RASC 2024</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ul class="research-theme-list">
+        <li><strong>Fault Attacks</strong> <span class="theme-references">[<a href="#pub-nishiyama2023remoteconf">ASHES 2023</a>, <a href="#pub-nishiyama2023efficient">IEEE TEMC 2023</a>, <a href="#pub-nishiyama2024pll">IEEE TEMC 2024</a>, <a href="#pub-nishiyama2025remote">JCEN 2025</a>, <a href="#pub-nishiyama2026isita">ISITA 2026</a>]</span></li>
+        <li><strong>Side-Channel Attacks</strong> <span class="theme-references">[<a href="#pub-nishiyama2024timing">EMC Europe 2024</a>, <a href="#pub-hayashi2025taxonomy">APMC 2025</a>]</span></li>
+        <li><strong>Hardware Trojan Detection</strong> <span class="theme-references">[<a href="#pub-nishiyama2026paine">PAINE 2026</a>]</span></li>
+        <li><strong>True Random Number Generators (TRNGs)</strong> <span class="theme-references">[<a href="#pub-nishiyama2026fdtc">FDTC 2026</a>, <a href="#pub-nishiyama2027unified">TCHES 2027</a>]</span></li>
+        <li><strong>Intentional Electromagnetic Interference (IEMI)</strong> <span class="theme-references">[<a href="#pub-nishiyama2019communication">EMC Compo 2019</a>, <a href="#pub-nishiyama2024controlling">EMC Compo 2024</a>, <a href="#pub-nishiyama2026pdn">IEEE L-EMCPA 2026</a>, <a href="#pub-nishiyama2026emccompo">EMC Compo 2026</a>]</span></li>
+        <li><strong>Electrical &amp; Circuit-Level Countermeasures</strong> <span class="theme-references">[<a href="#pub-nishiyama2024spread">URSI AT-RASC 2024</a>, <a href="#pub-nishiyama2025mitigating">IEEE EMC+SIPI 2025</a>]</span></li>
+      </ul>
     </div>
   </section>
 
@@ -133,7 +118,6 @@
         <div>
           <h2>Publications</h2>
         </div>
-        <a class="button secondary compact" href="publications.bib" download><i class="fa-solid fa-download"></i> Download BibTeX</a>
       </div>
       <div class="publication-controls">
         <button class="filter active" data-filter="all">All</button>
@@ -191,7 +175,7 @@
 
 <footer class="site-footer">
   <div class="container footer-wrap">
-    <div class="footer-meta"><p>© <span id="current-year"></span> Hikaru Nishiyama</p><p class="last-updated">Last updated: September 9, 2026</p></div>
+    <div class="footer-meta"><p>© <span id="current-year"></span> Hikaru Nishiyama</p><p class="last-updated">Last updated: September 25, 2026</p></div>
     <a href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
   </div>
 </footer>

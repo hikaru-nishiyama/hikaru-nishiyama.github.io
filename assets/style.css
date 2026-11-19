@@ -110,3 +110,281 @@ body{font-family:"Helvetica Neue",Arial,"Hiragino Sans",sans-serif}.site-header{
 .mark-researchmap{font-size:1.02rem;font-weight:750;letter-spacing:-.07em;text-transform:lowercase}
 .mark-kaken{font-size:.56rem;font-weight:800;letter-spacing:.025em}
 .keyword-pubs a{font-weight:500}
+
+
+/* v10 refined hero, profile links, research theme, and publication chart */
+.hero-grid{
+  grid-template-columns:minmax(0,820px) 195px;
+  column-gap:22px;
+  justify-content:start;
+  align-items:start;
+}
+.single-profile-photo{width:195px;margin-left:0}
+.hero-side{justify-self:start}
+.icon-links.hero-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  margin-top:12px;
+}
+.profile-text-link{
+  color:#343a40;
+  font-size:.92rem;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+  text-decoration-color:#8e9499;
+}
+.profile-text-link:hover{color:#000;text-decoration-color:#000}
+
+.research-theme-list{
+  margin:0;
+  padding-left:1.35rem;
+  max-width:1040px;
+}
+.research-theme-list li{
+  margin:.72rem 0;
+  padding-left:.18rem;
+  line-height:1.6;
+}
+.research-theme-list strong{font-weight:650;color:#25292d}
+.theme-references{color:#646b71;font-size:.94rem}
+.theme-references a{
+  color:#50575d;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+  text-decoration-color:#a3a8ac;
+}
+.theme-references a:hover{color:#111;text-decoration-color:#111}
+
+.publication-chart{
+  margin:0 0 24px;
+  padding:2px 0 6px;
+  border:0;
+}
+.publication-chart-plot{width:100%;overflow-x:auto}
+.publication-chart-svg{display:block;width:100%;min-width:660px;height:auto}
+.chart-gridline{stroke:#e4e7e9;stroke-width:1}
+.chart-axis{stroke:#a0a6ab;stroke-width:1}
+.chart-tick,.chart-year,.career-label{fill:#60676d;font-family:inherit}
+.chart-tick,.chart-year{font-size:12px}
+.chart-year{font-weight:600}
+.chart-segment{stroke:#fff;stroke-width:1}
+.chart-segment-label{fill:#fff;font-size:11px;font-weight:700;font-family:inherit;pointer-events:none}
+.chart-journal{fill:#2f6f9f}
+.chart-international{fill:#d4873b}
+.chart-domestic{fill:#6f9b72}
+.chart-talk{fill:#9a8fb8}
+.career-line{stroke:#8b9298;stroke-width:1.2}
+.career-label{font-size:11px;font-weight:600}
+
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) 185px;column-gap:20px}
+  .single-profile-photo{width:185px}
+}
+@media(max-width:760px){
+  .hero-grid{grid-template-columns:1fr;row-gap:20px}
+  .single-profile-photo{width:175px;max-width:175px}
+  .theme-references{font-size:.91rem}
+  .publication-chart{margin-bottom:20px}
+}
+
+
+/* v12: Tableau category colors, tighter hero, aligned Biography */
+:root{
+  --journal-color:#1f77b4;
+  --international-color:#ff7f0e;
+  --domestic-color:#2ca02c;
+  --talk-color:#9467bd;
+  --all-color:#4b5563;
+}
+
+/* Bring the portrait closer to the affiliation block. */
+.hero-grid{
+  grid-template-columns:minmax(0,720px) 180px;
+  column-gap:12px;
+  justify-content:start;
+}
+.single-profile-photo{width:180px}
+
+/* Biography uses the same horizontal container width as the other sections. */
+#biography .container{max-width:var(--max)}
+
+/* Publication filters use the exact same Tableau colors as the chart. */
+.filter{
+  font-weight:600;
+  transition:background-color .15s ease,color .15s ease,border-color .15s ease;
+}
+.filter[data-filter="all"]{color:var(--all-color);border-color:color-mix(in srgb,var(--all-color) 45%,white)}
+.filter[data-filter="journal"]{color:var(--journal-color);border-color:color-mix(in srgb,var(--journal-color) 45%,white)}
+.filter[data-filter="international"]{color:var(--international-color);border-color:color-mix(in srgb,var(--international-color) 45%,white)}
+.filter[data-filter="domestic"]{color:var(--domestic-color);border-color:color-mix(in srgb,var(--domestic-color) 45%,white)}
+.filter[data-filter="talk"]{color:var(--talk-color);border-color:color-mix(in srgb,var(--talk-color) 45%,white)}
+.filter[data-filter="all"].active{background:var(--all-color);border-color:var(--all-color);color:#fff}
+.filter[data-filter="journal"].active{background:var(--journal-color);border-color:var(--journal-color);color:#fff}
+.filter[data-filter="international"].active{background:var(--international-color);border-color:var(--international-color);color:#fff}
+.filter[data-filter="domestic"].active{background:var(--domestic-color);border-color:var(--domestic-color);color:#fff}
+.filter[data-filter="talk"].active{background:var(--talk-color);border-color:var(--talk-color);color:#fff}
+.filter:not(.active):hover{background:#f7f7f7}
+
+.chart-journal{fill:var(--journal-color)}
+.chart-international{fill:var(--international-color)}
+.chart-domestic{fill:var(--domestic-color)}
+.chart-talk{fill:var(--talk-color)}
+
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) 175px;column-gap:12px}
+  .single-profile-photo{width:175px}
+}
+@media(max-width:760px){
+  .hero-grid{grid-template-columns:1fr;row-gap:18px}
+  .single-profile-photo{width:165px;max-width:165px}
+}
+
+/* v13: keep small segment counts readable */
+.chart-segment-label-outside{fill:#30363b;font-size:10px;font-weight:700}
+
+
+/* v14: compact scrollable News section */
+.news-section{padding-top:42px;padding-bottom:42px}
+.news-section .section-heading{margin-bottom:18px}
+.news-box{
+  max-height:150px;
+  overflow-y:auto;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.news-item{
+  display:grid;
+  grid-template-columns:110px minmax(0,1fr);
+  gap:20px;
+  padding:16px 18px;
+  border-bottom:1px solid var(--line);
+}
+.news-item:last-child{border-bottom:0}
+.news-item time{font-weight:700;color:#555d63}
+.news-item p{margin:0}
+@media(max-width:760px){
+  .news-section{padding-top:32px;padding-bottom:32px}
+  .news-item{grid-template-columns:1fr;gap:5px}
+}
+
+
+/* v16: dark site, compact header identity, HSRG affiliation */
+:root{
+  --text:#f2f3f4;
+  --muted:#aeb4ba;
+  --accent:#d8dde2;
+  --line:#30343a;
+  --surface:#0b0c0e;
+  --surface-2:#111316;
+  --surface-3:#171a1e;
+}
+html{background:var(--surface)}
+body{background:var(--surface);color:var(--text)}
+a{color:#e8ebee}
+.site-header{
+  background:rgba(11,12,14,.96);
+  border-bottom-color:var(--line);
+  backdrop-filter:blur(8px);
+}
+.nav-wrap{justify-content:space-between;gap:28px}
+.site-brand{
+  color:#f5f6f7;
+  text-decoration:none;
+  font-size:1rem;
+  font-weight:650;
+  letter-spacing:-.015em;
+  white-space:nowrap;
+}
+.site-brand span{font-weight:500;color:#c8cdd2;margin-left:.12rem}
+.site-nav a{color:#c7ccd1}
+.site-nav a:hover{color:#fff}
+.nav-toggle{color:#f3f4f5}
+.hero{background:var(--surface);padding:40px 0 26px}
+.hero-grid{
+  grid-template-columns:minmax(0,660px) 225px;
+  column-gap:10px;
+  align-items:start;
+  justify-content:start;
+}
+.hero-main h1{display:none}
+.affiliation-block{margin-top:0;font-size:1.12rem}
+.affiliation-block p{margin:.18rem 0}
+.affiliation-block .role-line{font-size:1.24rem;color:#fff}
+.degree-line{color:#c9ced3;font-weight:500}
+.affiliation-link{
+  color:#e4e7ea;
+  text-decoration-color:#6d747b;
+}
+.affiliation-link:hover{color:#fff;text-decoration-color:#fff}
+.contact-line{color:var(--muted)}
+.single-profile-photo{width:225px}
+.profile-text-link{color:#cdd2d7;text-decoration-color:#6f767d}
+.profile-text-link:hover{color:#fff;text-decoration-color:#fff}
+.section{background:var(--surface)}
+.alt-section{background:var(--surface-2)}
+.simple-blue-heading h2{color:#f1f3f5}
+.timeline,.keyword-list,.membership-list{border-color:var(--line)}
+.timeline li,.membership-list li{border-color:var(--line)}
+.timeline span,.publication-status{color:#c5cbd0}
+.timeline strong{color:#fff}
+.research-theme-list strong{color:#f0f2f4}
+.theme-references{color:#aeb4ba}
+.theme-references a{color:#c7cdd2;text-decoration-color:#656c73}
+.theme-references a:hover{color:#fff;text-decoration-color:#fff}
+.button,.filter,.search-box{
+  background:var(--surface-2);
+  border-color:#3a3f45;
+  color:#d9dde1;
+}
+.filter:not(.active):hover{background:#1b1e22}
+.search-box input{color:#f1f2f3}
+.search-box input::placeholder{color:#858c93}
+.publication-item{border-bottom-color:#272b30}
+.publication-item .title{color:#f1f3f5}
+.authors,.venue{color:#afb5bb}
+.pub-meta a,.funding-link{color:#d9dde1}
+.oa-label{color:#c8cdd2;border-color:#41464c;background:#15181b}
+.publication-item:target{background:#15181b;outline-color:#34393f}
+.news-box{background:var(--surface-2);border-color:var(--line)}
+.news-item{border-color:var(--line)}
+.news-item time{color:#cbd0d5}
+.membership-list li::before{color:#cfd4d8}
+.membership-list a{color:#e4e7ea}
+.site-footer{background:#090a0b;border-top-color:var(--line);color:#9fa6ad}
+.site-footer a{color:#d8dde2}
+.chart-gridline{stroke:#292d32}
+.chart-axis{stroke:#6d747b}
+.chart-tick,.chart-year,.career-label{fill:#b7bdc3}
+.chart-segment{stroke:#0b0c0e}
+.chart-segment-label{fill:#fff}
+.chart-segment-label-outside{fill:#e9ecef}
+.career-line{stroke:#747b82}
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) 210px;column-gap:10px}
+  .single-profile-photo{width:210px}
+}
+@media(max-width:760px){
+  .nav-wrap{min-height:62px;gap:12px}
+  .site-brand{font-size:.92rem;white-space:normal;line-height:1.2}
+  .site-nav{background:#111316;border-color:var(--line)}
+  .hero-grid{grid-template-columns:1fr;row-gap:18px}
+  .single-profile-photo{width:190px;max-width:190px}
+}
+
+
+/* v18: vertical external profile list */
+.icon-links.hero-links{display:block;margin-top:14px}
+.profile-link-list{list-style:disc;margin:.2rem 0 0;padding-left:1.3rem}
+.profile-link-list li{margin:.18rem 0;color:#cdd2d7}
+.profile-text-link{display:inline;color:#d8dde2;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#6f767d}
+.profile-text-link:hover{color:#fff;text-decoration-color:#fff}
+.news-item a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+
+/* v19: News entries use event dates in prose, not posting-date columns */
+.news-box{max-height:220px}
+.news-item{display:block;padding:15px 18px}
+.news-item p{margin:0;line-height:1.6}

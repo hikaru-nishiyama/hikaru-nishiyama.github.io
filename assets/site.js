@@ -1,9 +1,9 @@
 
 const PROFILE_LINKS = [
-  { label: "Google Scholar", icon: "fa-brands fa-google-scholar", url: "https://scholar.google.com/citations?user=NVYVIGoAAAAJ&hl=ja" },
-  { label: "IEEE Author Profile", mark: "IEEE", markClass: "mark-ieee", url: "https://ieeexplore.ieee.org/author/37087115618" },
   { label: "Researchmap", mark: "rm", markClass: "mark-researchmap", url: "https://researchmap.jp/hikaru.nishiyama" },
+  { label: "Google Scholar", icon: "fa-brands fa-google-scholar", url: "https://scholar.google.com/citations?user=NVYVIGoAAAAJ&hl=ja" },
   { label: "KAKEN Researcher Profile", mark: "KAKEN", markClass: "mark-kaken", url: "https://nrid.nii.ac.jp/ja/nrid/1000021003287/" },
+  { label: "IEEE Author Detail", mark: "IEEE", markClass: "mark-ieee", url: "https://ieeexplore.ieee.org/author/37087115618" },
 ];
 
 const LABELS = {
@@ -69,7 +69,7 @@ function render(){
             <p class="title">${esc(p.title)}</p>
             <p class="authors">${authors(p.author)}</p>
             <p class="venue">${formatVenue(p)}${p.volume ? `, vol. ${esc(p.volume)}` : ""}${p.number ? `, no. ${esc(p.number)}` : ""}${p.pages ? `, pp. ${esc(p.pages)}` : ""}</p>
-            ${(p.url || p.doi || p.status || p.openaccess) ? `<div class="pub-meta">${(p.url || p.doi) ? `<a class="pub-link" href="${esc(p.url || `https://doi.org/${p.doi}`)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</a>` : (p.status ? `<span class="pub-status">${esc(p.status)}</span>` : "")}${p.openaccess === "yes" ? `<span class="oa-label">Open Access</span>` : ""}</div>` : ""}
+            ${(p.url || p.doi || p.slides || p.status || p.openaccess) ? `<div class="pub-meta">${(p.url || p.doi) ? `<a class="pub-link" href="${esc(p.url || `https://doi.org/${p.doi}`)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</a>` : ""}${p.slides ? `<a class="pub-link" href="${esc(p.slides)}" target="_blank" rel="noopener"><i class="fa-solid fa-file-powerpoint"></i> Slides</a>` : ""}${p.status ? `<span class="pub-status">${esc(p.status)}</span>` : ""}${p.openaccess === "yes" ? `<span class="oa-label">Open Access</span>` : ""}</div>` : ""}
           </article>
         `).join("")}
       </div>
@@ -79,7 +79,7 @@ function render(){
 
 document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector("#current-year").textContent = new Date().getFullYear();
-  document.querySelector("#profile-links").innerHTML = PROFILE_LINKS.map(x => `<a class="icon-link" href="${x.url}" target="_blank" rel="noopener" title="${x.label}" aria-label="${x.label}">${x.icon ? `<i class="${x.icon}"></i>` : `<span class="profile-mark ${x.markClass || ""}">${x.mark}</span>`}</a>`).join("");
+  document.querySelector("#profile-links").innerHTML = `<ul class="profile-link-list">${PROFILE_LINKS.map(x => `<li><a class="profile-text-link" href="${x.url}" target="_blank" rel="noopener">${x.label}</a></li>`).join("")}</ul>`;
 
   try {
     pubs = parseBib(await (await fetch("publications.bib")).text()).sort((a,b) => (+b.year || 0) - (+a.year || 0));
